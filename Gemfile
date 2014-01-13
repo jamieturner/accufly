@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
-  gem 'pg', '0.15.1'
+
 
 group :production do
   gem 'pg', '0.15.1'
@@ -8,7 +8,7 @@ group :production do
 end
 
 group :development, :test do
-  #gem 'sqlite3'
+  gem 'pg', '0.15.1'
 end
 
 group :assets do
