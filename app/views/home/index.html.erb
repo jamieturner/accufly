@@ -1,3 +1,10 @@
+<% if user_signed_in? %>
+User is signed in
+<% else %>
+
+
+
+
 <div id="welcome" class="hero-unit span7">
   <h1>Accufly - fishing flies made simple</h1>
   <h3>Choose a package. Receive your fishing flies each month</h3>
@@ -28,3 +35,5 @@
     <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %> 
   </div>
 </div>
+
+<% end %>
