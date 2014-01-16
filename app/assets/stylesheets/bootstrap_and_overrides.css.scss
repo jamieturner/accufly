@@ -2,10 +2,11 @@
 body { padding-top: 40px; }
 @import "bootstrap-responsive";
 
+/* make the span 100% of the page */
 .span12 {
     width: 100%;
   }
-
+/* 
 .container-fluid-no-padding {
     padding-right: 0px;
     padding-left: 0px;
@@ -14,6 +15,7 @@ body { padding-top: 40px; }
     padding-right: -20px;
     padding-left: -20px;
 }
+ */
 
 /* Non-essential demo stuff */
 		.hero-unit {
@@ -21,8 +23,46 @@ body { padding-top: 40px; }
 		    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 		}
 
-
+/* make the colour of links black */
 a {
     color: rgb(0, 0,0);
     text-decoration: none;
+}
+
+/* sign in form */
+.form-signin {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0px auto 20px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* tabs for plans */
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus {
+  color: #555555;
+  background-color: #FFB300;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+a:hover, a:focus {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #79BCEB;
+}
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
 }
