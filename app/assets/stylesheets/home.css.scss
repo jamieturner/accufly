@@ -10,8 +10,9 @@
     position: relative;
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
     padding: 100px 0;
+    background-size: 100%;
 }
-#intro2 {
+.intro2 {
     background: url('/assets/intro.jpg') 50% 0 fixed;
     height: auto; 
     width: 100%;

@@ -2,8 +2,19 @@
        $('#myTab a').click(function (e) {
     e.preventDefault();
     $(this).tab('show');
+
     })
-</script> 
+       </script> 
+
+<script type="text/javascript">
+$(function () {
+$('#myTab a:first').tab('show');
+})
+</script>
+
+
+
+
     <script type="text/javascript">
 $(document).ready(function(){
    // cache the window object
@@ -27,6 +38,8 @@ $(document).ready(function(){
    });  // end section function
 }); // close out script
 </script> 
+
+
 <!-- Section 1 -->
 <section id="intro" data-speed="6" data-type="background">
     <div class="container-fluid">
@@ -42,7 +55,7 @@ $(document).ready(function(){
 <!-- Section 2 -->
 <section id="home" data-speed="4" data-type="background">
     <div class="container-fluid">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" id="myTab">
       <li><a href="#nothome" data-toggle="tab">Trout</a></li>
       <li><a href="#profile" data-toggle="tab">Sea Trout</a></li>
       <li><a href="#messages" data-toggle="tab">Salmon</a></li>
@@ -53,84 +66,84 @@ $(document).ready(function(){
 <div class="tab-content">
   <div class="tab-pane active" id="nothome">
   <div class="row span12 plans">
-  <div class="span3 well">
+  <div class="span3 offset1 well dip">
     <div class="plan"><h2>Silver</h2></div>
     <ul class="unstyled">
-      <li>5 Trout flies  a month</li>
+      <li>5 Trout flies every month</li>
     </ul>
     <h3>£4.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
   </div>
   <div class="span3 well featured">
     <div class="plan featured-plan"><h2>Gold</h2></div>
     <ul class="unstyled">
-      <li>12 Trout flies a month</li>
+      <li>12 Trout flies every month</li>
     </ul>
     <h3>£9.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
   </div>
-  <div class="span3 well">
+  <div class="span3 well dip">
     <div class="plan"><h2>Platinum</h2></div>
     <ul class="unstyled">
-      <li>20 Trout flies a month</li>
+      <li>20 Trout flies every month</li>
     </ul>
     <h3>£14.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
   </div>
 </div>
 </div>
   <div class="tab-pane" id="profile">
   <div class="row span12 plans">
-  <div class="span3 well">
+  <div class="span3 offset1 well dip">
     <div class="plan"><h2>Silver</h2></div>
     <ul class="unstyled">
-      <li>5 Sea Trout flies  a month</li>
+      <li>5 Sea Trout flies  every month</li>
     </ul>
     <h3>£4.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
   </div>
   <div class="span3 well featured">
     <div class="plan featured-plan"><h2>Gold</h2></div>
     <ul class="unstyled">
-      <li>12 ea Trout flies a month</li>
+      <li>12 Sea Trout flies every month</li>
     </ul>
     <h3>£9.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
   </div>
-  <div class="span3 well">
+  <div class="span3 well dip">
     <div class="plan"><h2>Platinum</h2></div>
     <ul class="unstyled">
-      <li>20 ea Trout flies a month</li>
+      <li>20 Sea Trout flies every month</li>
     </ul>
     <h3>£14.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
   </div>
 </div></div>
   <div class="tab-pane" id="messages">
   <div class="row span12 plans">
-  <div class="span3 well">
+  <div class="span3 offset1 well dip">
     <div class="plan"><h2>Silver</h2></div>
     <ul class="unstyled">
-      <li>5 Salmon flies a month</li>
+      <li>5 Salmon flies every month</li>
     </ul>
     <h3>£4.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
   </div>
   <div class="span3 well featured">
     <div class="plan featured-plan"><h2>Gold</h2></div>
     <ul class="unstyled">
-      <li>12 Salmonflies a month</li>
+      <li>12 Salmonflies every month</li>
     </ul>
     <h3>£9.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
   </div>
-  <div class="span3 well">
+  <div class="span3 well dip">
     <div class="plan"><h2>Platinum</h2></div>
     <ul class="unstyled">
-      <li>20 Salmon flies a month</li>
+      <li>20 Salmon flies every month</li>
     </ul>
     <h3>£14.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %> 
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
   </div>
 </div>
 </div>
