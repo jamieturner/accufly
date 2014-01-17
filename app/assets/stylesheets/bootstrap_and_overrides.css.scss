@@ -58,6 +58,30 @@ a:hover, a:focus {
      margin-right: auto;
 }
 
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: rgb(52, 80, 40);
+    color: white;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color: rgb(255,255,255);
+    background-color: rgb(165, 201, 5);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221) rgb(221, 221, 221) transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    cursor: default;
+}
+
+.nav-tabs {
+    border-bottom: 3px solid rgb(221, 221, 221);
+}
+
 /* fix positioning of fields on signup form */
 input, textarea, .uneditable-input {
     width: 90%;
