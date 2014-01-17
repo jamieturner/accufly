@@ -12,13 +12,13 @@
   <body class="<%= controller_name %> <%= action_name %>">
     <div class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
-        <div class="container">
+        <div class="container-fluid">
           <%= render 'layouts/navigation' %>
         </div>
       </nav>
     </div>
     <div id="main" role="main">
-      <div class="container">
+      <div>
         <div class="content">
            <div class="row">
             <div class="span12">
@@ -27,9 +27,40 @@
             </div>
           </div>
           <footer>
+    <div class="footer">
+    <div class="container-fluid">
+        <ul class="nav footer-nav pull-left">
+            <li>
+                © Accufly 2014
+
+            </li>
+        </ul>
+        <ul class="nav footer-nav pull-right">
+            <li>
+Catch more.
+
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--
+
+     /container 
+
+    -->
+
+</div>
+<!--
+
+ /#footer 
+
+-->
           </footer>
         </div>
+        
       </div> <!--! end of .container -->
+
     </div> <!--! end of #main -->
+
   </body>
 </html>

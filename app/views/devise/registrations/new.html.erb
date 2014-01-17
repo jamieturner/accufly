@@ -1,10 +1,15 @@
-<% content_for :head do %>
+<div class="intro2">
+
+  <% content_for :head do %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 <% end %>
-<h2>Sign up</h2>
+
 <div id="stripe_error" class="alert alert-error" style="display:none" >
 </div>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'card_form form-vertical' }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'card_form form-vertical form-signin' }) do |f| %>
+<%= link_to '<i class="icon-step-backward"></i>''back'.html_safe, root_path %>
+
+<h2>Sign up</h2>
   <h3><%= params[:plan].titleize if params[:plan] %> Subscription Plan</h3>
   <%= hidden_field_tag 'plan', params[:plan] %>
   <%= f.error_notification %>
@@ -36,3 +41,4 @@
   <%= f.hidden_field :stripe_token %>
   <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
 <% end %>
+  </div>

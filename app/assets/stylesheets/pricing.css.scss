@@ -1,17 +1,24 @@
 .plans{
   text-align: center;
+  padding: 40px;
 }
 .featured{
   -webkit-transform:scale(1.15); 
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.67);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.67);
+  height: 270px;
+
 }
 .plan{
-  background-color: #111575;
+  background-color: #345028;
 }
 .plan.featured-plan{
-  background-color: #CCAB00;
+  background-color: #A5C905;
 }
 .plan h2{
   line-height: 100px;
   color: #fff;
+}
+
+.dip {
+    margin-top: 20px;
 }
