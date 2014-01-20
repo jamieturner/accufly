@@ -4,7 +4,7 @@ RailsStripeMembershipSaas::Application.routes.draw do
   get "content/silver"
   get "content/platinum"
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'static_pages#home'
   end
   root :to => "static_pages#home"
   devise_for :users, :controllers => { :registrations => 'registrations' }

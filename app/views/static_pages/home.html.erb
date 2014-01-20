@@ -1,3 +1,13 @@
+<% if user_signed_in? %>
+
+<div class="container-fluid">
+  <div class="hero-unit">
+    test
+  </div>
+</div>
+
+<% else %>
+
        <script type="text/javascript">
        $('#myTab a').click(function (e) {
     e.preventDefault();
@@ -45,9 +55,10 @@ $(document).ready(function(){
     <div class="container-fluid">
         <div class='span9'>
     <div class="hero-unit">
-    <h1>Flies made simple</h1>
-    <p>Discover. Learn. Catch</p>
-    <p>
+    <h1> <img src="/assets/logo.png">
+    Flies made simple</h1>
+    Discover. Learn. Catch
+    
     </div>
     </div>
     </div>
@@ -191,4 +202,30 @@ $(document).ready(function(){
     </div>
 </section>
 
+<!-- Section 5 -->
+<!-- Section 3 -->
+<section id="about" data-speed="2" data-type="background">
+    <div class="container">
+      <div class="row">       
+      <div class="span1">
+    <img src="assets/face1.jpg" class="img-polaroid" height="120px" width="120px">
+     </div>
+     <div class="span3">
+       <blockquote><p>"I'm looking forward to this year's reunion and catching up with everyone."</p><p><small>@MichaelTyson</small></p></blockquote>
+      </div>
+  <div class="span1">
+    <img src="assets/face1.jpg" class="img-polaroid" height="100px" width="100px">
+     </div>
+     <div class="span3">
+       <blockquote><p>"I'm looking forward to this year's reunion and catching up with everyone."</p><p><small>Michael Tyson</small></p></blockquote>
+      </div>
+      <div class="span1">
+    <img src="assets/face1.jpg" class="img-polaroid" height="100px" width="100px">
+     </div>
+     <div class="span3">
+       <blockquote><p>"I'm looking forward to this year's reunion and catching up with everyone."</p><p><small>Michael Tyson</small></p></blockquote>
+      </div>
+</section>
+
+<% end %>
 
