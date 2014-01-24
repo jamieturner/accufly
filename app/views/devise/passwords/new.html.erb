@@ -1,0 +1,19 @@
+<div class="container-fluid intro2">
+	
+<br>
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'form-signin' }) do |f| %>
+  <%= f.error_notification %>
+<h2>Forgot your password?</h2>
+  <div class="form-inputs">
+    <%= f.input :email, :required => true, :autofocus => true %>
+  </div>
+
+  <div>
+    <%= f.button :submit, "Send me reset password instructions" %>
+  </div>
+  <br>
+  <%= render "devise/shared/links" %>
+
+<% end %>
+
+</div?

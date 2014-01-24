@@ -3,5 +3,15 @@ def about
 end
 
 def home
-	end
+end
+
+def faqs
+end
+
+def terms
+end
+
+def privacy
+end
+
 end

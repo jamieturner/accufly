@@ -29,20 +29,19 @@
           <footer>
     <div class="footer">
     <div class="container-fluid">
-        <ul class="nav footer-nav pull-left">
-            <li>
-                © Accufly 2014
-
-            </li>
-        </ul>
-        <ul class="nav footer-nav pull-right">
-            <li>
+        
+            <div class="pull-left">
+                © Accufly 2014|
+    
+            <%= link_to 'About', about_path, :class => 'white' %> |
+            <%= link_to 'Terms & Conditions', termsandconditions_path, :class => 'white' %>        
+                </div>
+       
+            <div class="pull-right">
 Catch more.
 
-                </a>
-            </li>
-        </ul>
-    </div>
+          
+
     <!--
 
      /container 

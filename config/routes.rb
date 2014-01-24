@@ -13,4 +13,10 @@ RailsStripeMembershipSaas::Application.routes.draw do
     put 'update_card', :to => 'registrations#update_card'
   end
   resources :users
+
+    match '/about',  to: 'static_pages#about',         via: 'get'
+    match '/faqs',  to: 'static_pages#faqs',         via: 'get'
+    match '/termsandconditions',  to: 'static_pages#terms',         via: 'get'
+    match '/privacypolicy',  to: 'static_pages#privacy',         via: 'get'
+
 end
