@@ -6,7 +6,7 @@
 
 <div id="stripe_error" class="alert alert-error" style="display:none" >
 </div>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'card_form form-vertical form-signin' }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'card_form form-vertical form-signin-wide' }) do |f| %>
 <%= link_to '<i class="icon-step-backward"></i>''back'.html_safe, root_path %>
 
 <h2>Sign up</h2>
@@ -18,9 +18,30 @@
   <%= f.input :email, :required => true %>
   <%= f.input :password, :required => true %>
   <%= f.input :password_confirmation, :required => true %>
+
+
+
+<%= field_set_tag 'Address Details' do %>
+            <%= f.fields_for :addresses do |builder| %>
+                <%= builder.label :first_line %>
+                <%= builder.text_field :first_line %>
+                <%= builder.label :second_line %>
+                <%= builder.text_field :second_line %>
+                <%= builder.label :town_city %>
+                <%= builder.text_field :town_city %>
+                <%= builder.label :county %>
+                <%= builder.text_field :county %>
+                <%= builder.label :postcode %>
+                <%= builder.text_field :postcode %>
+                <%= builder.label :country %>
+                <%= builder.text_field :country %>
+                 <% end %>
+        <% end %>
+
   <% if @user.stripe_token %>
     <p>Credit card acceptance is pending.</p>
   <% else %>
+  <%= field_set_tag 'Card Details' do %>
     <div class="field">
       <%= label_tag :card_number, "Credit Card Number" %>
       <%= text_field_tag :card_number, nil, name: nil %>
@@ -38,6 +59,7 @@
       <%= f.input :coupon, :label => 'Promotional Coupon (if any)' %>
     </div>
   <% end %>
+    <% end %>
   <%= f.hidden_field :stripe_token %>
   <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
 <% end %>

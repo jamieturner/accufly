@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3000/users/sign_up?plan=gold" />
+<title>registration</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">registration</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/users/sign_up?plan=silver</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_name</td>
+	<td>Bob</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_email</td>
+	<td>bob@bobsfishinghotel.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_password</td>
+	<td>12345678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_password_confirmation</td>
+	<td>12345678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_address_first_line</td>
+	<td>7a Annette Road</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_address_second_line</td>
+	<td>Bob's Landing</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_address_town_city</td>
+	<td>London</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_address_county</td>
+	<td>Greater London</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_address_postcode</td>
+	<td>N76ET</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_address_country</td>
+	<td>UK</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_number</td>
+	<td>4242424242424242</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_code</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_month</td>
+	<td>label=3 - March</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_year</td>
+	<td>label=2016</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

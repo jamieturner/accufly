@@ -1,4 +1,5 @@
 RailsStripeMembershipSaas::Application.routes.draw do
+  resources :addresses
   mount StripeEvent::Engine => '/stripe'
   get "content/gold"
   get "content/silver"
@@ -18,5 +19,7 @@ RailsStripeMembershipSaas::Application.routes.draw do
     match '/faqs',  to: 'static_pages#faqs',         via: 'get'
     match '/termsandconditions',  to: 'static_pages#terms',         via: 'get'
     match '/privacypolicy',  to: 'static_pages#privacy',         via: 'get'
+
+
 
 end
