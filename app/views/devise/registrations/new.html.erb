@@ -5,58 +5,70 @@
   <div id="stripe_error" class="alert alert-error" style="display:none" >
   </div>
   <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'card_form form-vertical form-signin-wide' }) do |f| %>
-    <%= link_to '<i class="icon-step-backward"></i>''back'.html_safe, root_path %>
-    <h2>Sign up</h2>
-    <h3><%= params[:plan].titleize if params[:plan] %>
-      Subscription Plan</h3>
-    <%= hidden_field_tag 'plan', params[:plan] %>
-    <%= f.error_notification %>
-    <%= display_base_errors resource %>
-    <%= f.input :name, :autofocus => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
-    <%= field_set_tag 'Address Details' do %>
-      <%= f.fields_for :addresses do |builder| %>
-        <%= builder.label :first_line %>
-        <%= builder.text_field :first_line %>
-        <%= builder.label :second_line %>
-        <%= builder.text_field :second_line %>
-        <%= builder.label :town_city %>
-        <%= builder.text_field :town_city %>
-        <%= builder.label :county %>
-        <%= builder.text_field :county %>
-        <%= builder.label :postcode %>
-        <%= builder.text_field :postcode %>
-        <%= builder.label :country %>
-        <%= builder.text_field :country %>
-      <% end %>
-    <% end %>
-    <% if @user.stripe_token %>
-      <p>Credit card acceptance is pending.</p>
-    <% else %>
-      <%= field_set_tag 'Card Details' do %>
-        <div class="field">
-          <%= label_tag :card_number, "Credit Card Number" %>
-          <%= text_field_tag :card_number, nil, name: nil %>
-        </div>
-        <div class="field">
-          <%= label_tag :card_code, "Card Security Code (CVV)" %>
-          <%= text_field_tag :card_code, nil, name: nil %>
-        </div>
-        <div class="field">
-          <%= label_tag :card_month, "Card Expiration" %>
-          <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}%>
-          <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year"}%>
-        </div>
-        <div class="field">
-          <%= f.input :coupon, :label => 'Promotional Coupon (if any)' %>
-        </div>
-      <% end %>
-    <% end %>
-    <%= f.hidden_field :stripe_token %>
-    <%= f.input :accepts, as: :boolean, label: 'I agree to the Terms and Conditions' %>
-    <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
-
+    <div class="container-fluid no-margin">
+      <div class="span5 no-margin">
+        <%= link_to '<i class="icon-step-backward"></i>''back'.html_safe, root_path %>
+        <h2>Sign up</h2>
+        <h3><%= params[:plan].titleize if params[:plan] %>
+          Subscription Plan</h3>
+        <%= hidden_field_tag 'plan', params[:plan] %>
+        <%= f.error_notification %>
+        <%= display_base_errors resource %>
+        <%= f.input :name, :autofocus => true %>
+        <%= f.input :email, :required => true %>
+        <%= f.input :password, :required => true %>
+        <%= f.input :password_confirmation, :required => true %>
+        <%= field_set_tag 'Address Details' do %>
+          <%= f.fields_for :addresses do |builder| %>
+            <%= builder.label :first_line %>
+            <%= builder.text_field :first_line %>
+            <%= builder.label :second_line %>
+            <%= builder.text_field :second_line %>
+            <%= builder.label :town_city %>
+            <%= builder.text_field :town_city %>
+            <%= builder.label :county %>
+            <%= builder.text_field :county %>
+            <%= builder.label :postcode %>
+            <%= builder.text_field :postcode %>
+            <%= builder.label :country %>
+            <%= builder.text_field :country %>
+          <% end %>
+        <% end %>
+        <% if @user.stripe_token %>
+          <p>Credit card acceptance is pending.</p>
+        <% else %>
+          <%= field_set_tag 'Card Details' do %>
+            <div class="field">
+              <%= label_tag :card_number, "Credit Card Number" %>
+              <%= text_field_tag :card_number, nil, name: nil %>
+            </div>
+            <div class="field">
+              <%= label_tag :card_code, "Card Security Code (CVV)" %>
+              <%= text_field_tag :card_code, nil, name: nil %>
+            </div>
+            <div class="field">
+              <%= label_tag :card_month, "Card Expiration" %>
+              <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}%>
+              <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year"}%>
+            </div>
+            <div class="field">
+              <%= f.input :coupon, :label => 'Promotional Coupon (if any)' %>
+            </div>
+          <% end %>
+        <% end %>
+        <%= f.hidden_field :stripe_token %>
+        <%= f.input :accepts, as: :boolean, label: 'I agree to the Terms and Conditions' %>
+        <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+      </div>
+      <div class="span3 baz">
+        <h3>Some interesting line</h3><br>
+        Another intersting line!
+      </div>
+      <br>
+      <div class="span3 baz2">
+        Free for the first month<br>
+        Cancel at any time!
+      </div>
+    </div>
   <% end %>
 </div>
