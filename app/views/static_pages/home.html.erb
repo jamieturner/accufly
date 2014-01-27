@@ -63,6 +63,16 @@ $(function() {
       }
     }
   });
+
+  if($(location.href.split("#")[1])) {
+      var target = $('#'+location.href.split("#")[1]);
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 40 //offset height of header here too.
+        }, 1000);
+        return false;
+      }
+    }
 });
 
 </script>

@@ -1,22 +1,22 @@
 <%= link_to "Accufly", root_path, :class => 'brand' %>
 <ul class="nav pull-right">
   <li>
-    <%= link_to "Buy", "#buy", "data-toggle" => "elementscroll" %>      
+    <%= link_to "Buy", root_path(anchor: "buy"), "data-toggle" => "elementscroll" %>      
     </li>
       <li>
-    <%= link_to "What you get", "#whatyouget", "data-toggle" => "elementscroll" %>      
+    <%= link_to "What you get", root_path(anchor: "whatyouget"), "data-toggle" => "elementscroll" %>      
     </li>
           <li>
-    <%= link_to "How it works", "#howitworks", "data-toggle" => "elementscroll" %>      
+    <%= link_to "How it works", root_path(anchor: "howitworks"), "data-toggle" => "elementscroll" %>      
     </li>
               <li>
-    <%= link_to "Customer Quotes", "#socialproof", "data-toggle" => "elementscroll" %>      
+    <%= link_to "Customer Quotes", root_path(anchor: "socialproof"), "data-toggle" => "elementscroll" %>      
     </li>
   <li>
-    <%= link_to 'About', "#about", "data-toggle" => "elementscroll" %>        
+    <%= link_to 'About', root_path(anchor: "about"), "data-toggle" => "elementscroll" %>        
     </li>
     <li>
-    <%= link_to 'FAQs', "#socialproof", "data-toggle" => "elementscroll" %>        
+    <%= link_to 'FAQs', root_path(anchor: "faqs"), "data-toggle" => "elementscroll" %>        
     </li>
 
   <% if user_signed_in? %>
