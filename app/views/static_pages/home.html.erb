@@ -1,299 +1,285 @@
 <% if user_signed_in? %>
-
-<%= render 'static_pages/home' %>
-
+  <%= render 'static_pages/home' %>
 <% else %>
-
-<!-- Tabbed content -->
-<script type="text/javascript">
-   $('#myTab a').click(function (e) {
-      e.preventDefault();
-      $(this).tab('show');
+  <!-- Tabbed content -->
+  <script type="text/javascript">
+    $('#myTab a').click(function (e) {
+       e.preventDefault();
+       $(this).tab('show');
+     })
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $('#myTab a:first').tab('show');
     })
-</script> 
-
-<script type="text/javascript">
-  $(function () {
-    $('#myTab a:first').tab('show');
-  })
-</script>
-
-
-<!-- Parallax -->
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-   // cache the window object
-   $window = $(window);
- 
-   $('section[data-type="background"]').each(function(){
-     // declare the variable to affect the defined data-type
-     var $scroll = $(this);
-                     
-      $(window).scroll(function() {
-        // HTML5 proves useful for helping with creating JS functions!
-        // also, negative value because we're scrolling upwards                            
-        var yPos = -($window.scrollTop() / $scroll.data('speed'));
-         
-        // background position
-        var coords = '50% '+ yPos + 'px';
- 
-        // move the background
-        $scroll.css({ backgroundPosition: coords });   
-      }); // end window scroll
-   });  // end section function
-}); // close out script
-</script> 
-
-<!-- Smooth Scrolling -->
-
-<script type="text/javascript">
-
-$(function() {
-  $('[data-toggle="elementscroll"]').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top -40
-        }, 1000);
-        return false;
-      }
-    }
-  });
-
-  if($(location.href.split("#")[1])) {
-      var target = $('#'+location.href.split("#")[1]);
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top - 40 //offset height of header here too.
-        }, 1000);
-        return false;
-      }
-    }
-});
-
-</script>
-
-<!-- Section 1 -->
-<section id="intro" data-speed="6" data-type="background">
-    <div class="container-fluid">
-        <div class='span9'>
-    <div class="hero-unit">
-    <!--  <h1> <img src="/assets/logo.png"> -->
-    <h1>Flies made simple</h1>
-    Discover. Learn. Catch
+  </script>
+  <!-- Parallax -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+       // cache the window object
+       $window = $(window);
     
-    </div>
-    </div>
-    </div>
-</section>
-<!-- Section 2 -->
-<section id="buy" data-speed="4" data-type="background">
+       $('section[data-type="background"]').each(function(){
+         // declare the variable to affect the defined data-type
+         var $scroll = $(this);
+    
+          $(window).scroll(function() {
+            // HTML5 proves useful for helping with creating JS functions!
+            // also, negative value because we're scrolling upwards
+            var yPos = -($window.scrollTop() / $scroll.data('speed'));
+    
+            // background position
+            var coords = '50% '+ yPos + 'px';
+    
+            // move the background
+            $scroll.css({ backgroundPosition: coords });
+          }); // end window scroll
+       });  // end section function
+    }); // close out script
+  </script>
+  <!-- Smooth Scrolling -->
+  <script type="text/javascript">
+    $(function() {
+      $('[data-toggle="elementscroll"]').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top -40
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    
+      if($(location.href.split("#")[1])) {
+          var target = $('#'+location.href.split("#")[1]);
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top - 40 //offset height of header here too.
+            }, 1000);
+            return false;
+          }
+        }
+    });
+  </script>
+  <!-- Section 1 -->
+  <section id="intro" data-speed="6" data-type="background">
     <div class="container-fluid">
-    <ul class="nav nav-tabs" id="myTab">
-      <li><a href="#nothome" data-toggle="tab">Trout</a></li>
-      <li><a href="#profile" data-toggle="tab">Sea Trout</a></li>
-      <li><a href="#messages" data-toggle="tab">Salmon</a></li>
-    </ul>
-    </div>
-
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="nothome">
-  <div class="row span12 plans">
-  <div class="span3 offset1 well dip">
-    <div class="plan"><h2>Silver</h2></div>
-    <ul class="unstyled">
-      <li>5 Trout flies every month</li>
-    </ul>
-    <h3>£4.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
-  </div>
-  <div class="span3 well featured">
-    <div class="plan featured-plan"><h2>Gold</h2></div>
-    <ul class="unstyled">
-      <li>12 Trout flies every month</li>
-    </ul>
-    <h3>£9.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
-  </div>
-  <div class="span3 well dip">
-    <div class="plan"><h2>Platinum</h2></div>
-    <ul class="unstyled">
-      <li>20 Trout flies every month</li>
-    </ul>
-    <h3>£14.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
-  </div>
-</div>
-</div>
-  <div class="tab-pane" id="profile">
-  <div class="row span12 plans">
-  <div class="span3 offset1 well dip">
-    <div class="plan"><h2>Silver</h2></div>
-    <ul class="unstyled">
-      <li>5 Sea Trout flies  every month</li>
-    </ul>
-    <h3>£4.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
-  </div>
-  <div class="span3 well featured">
-    <div class="plan featured-plan"><h2>Gold</h2></div>
-    <ul class="unstyled">
-      <li>12 Sea Trout flies every month</li>
-    </ul>
-    <h3>£9.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
-  </div>
-  <div class="span3 well dip">
-    <div class="plan"><h2>Platinum</h2></div>
-    <ul class="unstyled">
-      <li>20 Sea Trout flies every month</li>
-    </ul>
-    <h3>£14.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
-  </div>
-</div></div>
-  <div class="tab-pane" id="messages">
-  <div class="row span12 plans">
-  <div class="span3 offset1 well dip">
-    <div class="plan"><h2>Silver</h2></div>
-    <ul class="unstyled">
-      <li>5 Salmon flies every month</li>
-    </ul>
-    <h3>£4.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
-  </div>
-  <div class="span3 well featured">
-    <div class="plan featured-plan"><h2>Gold</h2></div>
-    <ul class="unstyled">
-      <li>12 Salmon flies every month</li>
-    </ul>
-    <h3>£9.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
-  </div>
-  <div class="span3 well dip">
-    <div class="plan"><h2>Platinum</h2></div>
-    <ul class="unstyled">
-      <li>20 Salmon flies every month</li>
-    </ul>
-    <h3>£14.99/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
-  </div>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 3 -->
-<section id="whatyouget" data-speed="2" data-type="background">
-    <div class="container">
-    <div class="row">
-    What you get <br>
-    <div class="span4">
-        <h1>Thing 1</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>Thing 2</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>Thing 3</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-    </div>
+      <div class='span9'>
+        <div class="hero-unit">
+          <!--  <h1> <img src="/assets/logo.png"> -->
+          <h1>Flies made simple</h1>
+          Discover. Learn. Catch
         </div>
-    </div>
-</section>
-
-<!-- Section 4 -->
-<section id="howitworks" data-speed="2" data-type="background">
-    <div class="container">
-    <div class="row">
-    How it works <br>
-    <div class="span4">
-        <h1>Step 1</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>Step 2</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>Step 3</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-    </div>
-        </div>
-    </div>
-</section>
-
-<!-- Section 5 -->
-<section id="socialproof" data-speed="2" data-type="background">
-    <div class="container">
-      <div class="row">       
-      <div class="span1">
-    <img src="assets/ben.png" class="img-polaroid" height="120px" width="120px">
-     </div>
-     <div class="span3">
-       <blockquote><p>"It's straight forward - every month I get fishing flies that I wouldn't have thought to use."</p><p><small>@BenIrish2</small></p></blockquote>
       </div>
-  <div class="span1">
-    <img src="assets/nat.png" class="img-polaroid" height="100px" width="100px">
-     </div>
-     <div class="span3">
-       <blockquote><p>"My favourite part of the service is the information pack that comes with the flies"</p><p><small>@natelie_h</small></p></blockquote>
-      </div>
-      <div class="span1">
-    <img src="assets/bob.png" class="img-polaroid" height="100px" width="100px">
-     </div>
-     <div class="span3">
-       <blockquote><p>"Accufly has helped me build up a great selection of flies - and when to use them!"</p><p><small>@BobSherman67</small></p></blockquote>
-      </div>
-</section>
-
-<!-- Section 6 -->
-<section id="about" data-speed="2" data-type="background">
-    <div class="container">
-    <div class="row">
-    About Us <br>
-    <div class="span4">
-        <h1>About 1</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>About 2</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>About 3</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
     </div>
+  </section>
+  <!-- Section 2 -->
+  <section id="buy" data-speed="4" data-type="background">
+    <div class="container-fluid">
+      <ul class="nav nav-tabs" id="myTab">
+        <li><a href="#nothome" data-toggle="tab">Trout</a></li>
+        <li><a href="#profile" data-toggle="tab">Sea Trout</a></li>
+        <li><a href="#messages" data-toggle="tab">Salmon</a></li>
+      </ul>
+    </div>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="nothome">
+        <div class="row span12 plans">
+          <div class="span3 offset1 well dip">
+            <div class="plan"><h2>Silver</h2></div>
+            <ul class="unstyled">
+              <li>5 Trout flies every month</li>
+            </ul>
+            <h3>£4.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %>
+          </div>
+          <div class="span3 well featured">
+            <div class="plan featured-plan"><h2>Gold</h2></div>
+            <ul class="unstyled">
+              <li>12 Trout flies every month</li>
+            </ul>
+            <h3>£9.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %>
+          </div>
+          <div class="span3 well dip">
+            <div class="plan"><h2>Platinum</h2></div>
+            <ul class="unstyled">
+              <li>20 Trout flies every month</li>
+            </ul>
+            <h3>£14.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %>
+          </div>
         </div>
-    </div>
-</section>
-
-<!-- Section 7 -->
-<section id="faqs" data-speed="2" data-type="background">
-    <div class="container">
-    <div class="row">
-    FAQs <br>
-    <div class="span4">
-        <h1>FAQ 1</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>FAQ 2</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-</div>
-        <div class="span4">
-            <h1>FAQ 3</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-    </div>
+      </div>
+      <div class="tab-pane" id="profile">
+        <div class="row span12 plans">
+          <div class="span3 offset1 well dip">
+            <div class="plan"><h2>Silver</h2></div>
+            <ul class="unstyled">
+              <li>5 Sea Trout flies  every month</li>
+            </ul>
+            <h3>£4.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %>
+          </div>
+          <div class="span3 well featured">
+            <div class="plan featured-plan"><h2>Gold</h2></div>
+            <ul class="unstyled">
+              <li>12 Sea Trout flies every month</li>
+            </ul>
+            <h3>£9.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %>
+          </div>
+          <div class="span3 well dip">
+            <div class="plan"><h2>Platinum</h2></div>
+            <ul class="unstyled">
+              <li>20 Sea Trout flies every month</li>
+            </ul>
+            <h3>£14.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %>
+          </div>
         </div>
+      </div>
+      <div class="tab-pane" id="messages">
+        <div class="row span12 plans">
+          <div class="span3 offset1 well dip">
+            <div class="plan"><h2>Silver</h2></div>
+            <ul class="unstyled">
+              <li>5 Salmon flies every month</li>
+            </ul>
+            <h3>£4.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %>
+          </div>
+          <div class="span3 well featured">
+            <div class="plan featured-plan"><h2>Gold</h2></div>
+            <ul class="unstyled">
+              <li>12 Salmon flies every month</li>
+            </ul>
+            <h3>£9.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %>
+          </div>
+          <div class="span3 well dip">
+            <div class="plan"><h2>Platinum</h2></div>
+            <ul class="unstyled">
+              <li>20 Salmon flies every month</li>
+            </ul>
+            <h3>£14.99/month</h3>
+            <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-
+  </section>
+  <!-- Section 3 -->
+  <section id="whatyouget" data-speed="2" data-type="background">
+    <div class="container">
+      <div class="row">
+        What you get
+        <br>
+        <div class="span4">
+          <h1>Thing 1</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>Thing 2</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>Thing 3</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 4 -->
+  <section id="howitworks" data-speed="2" data-type="background">
+    <div class="container">
+      <div class="row">
+        How it works
+        <br>
+        <div class="span4">
+          <h1>Step 1</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>Step 2</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>Step 3</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 5 -->
+  <section id="socialproof" data-speed="2" data-type="background">
+    <div class="container">
+      <div class="row">
+        <div class="span1">
+          <img src="assets/ben.png" class="img-polaroid" height="120" width="120">
+        </div>
+        <div class="span3">
+          <blockquote><p>"It's straight forward - every month I get fishing flies that I wouldn't have thought to use."</p><p><small>@BenIrish2</small></p></blockquote>
+        </div>
+        <div class="span1">
+          <img src="assets/nat.png" class="img-polaroid" height="120" width="120">
+        </div>
+        <div class="span3">
+          <blockquote><p>"My favourite part of the service is the information pack that comes with the flies"</p><p><small>@natelie_h</small></p></blockquote>
+        </div>
+        <div class="span1">
+          <img src="assets/bob.png" class="img-polaroid" height="120" width="120">
+        </div>
+        <div class="span3">
+          <blockquote><p>"Accufly has helped me build up a great selection of flies - and when to use them!"</p><p><small>@BobSherman67</small></p></blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 6 -->
+  <section id="about" data-speed="2" data-type="background">
+    <div class="container">
+      <div class="row">
+        About Us
+        <br>
+        <div class="span4">
+          <h1>About 1</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>About 2</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>About 3</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 7 -->
+  <section id="faqs" data-speed="2" data-type="background">
+    <div class="container">
+      <div class="row">
+        FAQs
+        <br>
+        <div class="span4">
+          <h1>FAQ 1</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>FAQ 2</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h1>FAQ 3</h1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+      </div>
+    </div>
+  </section>
 <% end %>
-

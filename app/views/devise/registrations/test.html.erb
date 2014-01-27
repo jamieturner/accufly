@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accufly</title>
+    <meta name="description" content="Rails Stripe Membership Saas">
+    <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/home.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/pricing.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-transition.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-affix.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-alert.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-button.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-carousel.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-modal.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-scrollspy.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-tab.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-popover.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
+    <script src="/assets/home.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery.externalscript.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery.readyselector.js?body=1" type="text/javascript"></script>
+    <script src="/assets/registrations.js?body=1" type="text/javascript"></script>
+    <script src="/assets/cocoon.js?body=1" type="text/javascript"></script>
+    <script src="/assets/application.js?body=1" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="d7S5l7SJ9l8sXVjATddD/ovrvWkjkpQlVvvC/rW31UU=" name="csrf-token" />
+    <meta content="pk_test_ZDGtg430OrlEmaHnhJFEfCE9" name="stripe-key" />
+  </head>
+  <body class="registrations new">
+    <div class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container-fluid">
+          <a href="/" class="brand">Accufly</a>
+          <ul class="nav pull-right">
+            <li>
+              <a href="/#buy" data-toggle="elementscroll">Buy</a>
+            </li>
+            <li>
+              <a href="/#whatyouget" data-toggle="elementscroll">What you get</a>
+            </li>
+            <li>
+              <a href="/#howitworks" data-toggle="elementscroll">How it works</a>
+            </li>
+            <li>
+              <a href="/#socialproof" data-toggle="elementscroll">Customer Quotes</a>
+            </li>
+            <li>
+              <a href="/#about" data-toggle="elementscroll">About</a>
+            </li>
+            <li>
+              <a href="/#faqs" data-toggle="elementscroll">FAQs</a>
+            </li>
+            <li >
+              <a href="/users/sign_in">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="main" role="main">
+      <div>
+        <div class="content">
+          <div class="row">
+            <div class="span12">
+              <div class="intro2">
+                <div id="stripe_error" class="alert alert-error" style="display:none" >
+                </div>
+                <form accept-charset="UTF-8" action="/users" class="simple_form card_form form-vertical form-signin-wide" id="new_user" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="d7S5l7SJ9l8sXVjATddD/ovrvWkjkpQlVvvC/rW31UU=" /></div>
+                  <a href="/"><i class="icon-step-backward"></i>back</a>
+                  <h2>Sign up</h2>
+                  <h3>Silver
+      Subscription Plan</h3>
+                  <input id="plan" name="plan" type="hidden" value="silver" />
+                  <div class="control-group string optional user_name"><label class="string optional control-label" for="user_name">Name</label><div class="controls"><input autofocus="autofocus" class="string optional" id="user_name" name="user[name]" size="50" type="text" /></div></div>
+                  <div class="control-group email required user_email"><label class="email required control-label" for="user_email"><abbr title="required">*</abbr>
+                      Email</label><div class="controls"><input class="string email required" id="user_email" name="user[email]" size="50" type="email" value="" /></div></div>
+                  <div class="control-group password required user_password"><label class="password required control-label" for="user_password"><abbr title="required">*</abbr>
+                      Password</label><div class="controls"><input class="password required" id="user_password" name="user[password]" size="50" type="password" /></div></div>
+                  <div class="control-group password required user_password_confirmation"><label class="password required control-label" for="user_password_confirmation"><abbr title="required">*</abbr>
+                      Password confirmation</label><div class="controls"><input class="password required" id="user_password_confirmation" name="user[password_confirmation]" size="50" type="password" /></div></div>
+                  <fieldset><legend>Address Details</legend>
+                    <label class="string optional control-label" for="user_addresses_attributes_0_first_line">First line</label>
+                    <input id="user_addresses_attributes_0_first_line" name="user[addresses_attributes][0][first_line]" size="30" type="text" />
+                    <label class="string optional control-label" for="user_addresses_attributes_0_second_line">Second line</label>
+                    <input id="user_addresses_attributes_0_second_line" name="user[addresses_attributes][0][second_line]" size="30" type="text" />
+                    <label class="string optional control-label" for="user_addresses_attributes_0_town_city">Town city</label>
+                    <input id="user_addresses_attributes_0_town_city" name="user[addresses_attributes][0][town_city]" size="30" type="text" />
+                    <label class="string optional control-label" for="user_addresses_attributes_0_county">County</label>
+                    <input id="user_addresses_attributes_0_county" name="user[addresses_attributes][0][county]" size="30" type="text" />
+                    <label class="string optional control-label" for="user_addresses_attributes_0_postcode">Postcode</label>
+                    <input id="user_addresses_attributes_0_postcode" name="user[addresses_attributes][0][postcode]" size="30" type="text" />
+                    <label class="country optional control-label" for="user_addresses_attributes_0_country">Country</label>
+                    <input id="user_addresses_attributes_0_country" name="user[addresses_attributes][0][country]" size="30" type="text" />
+                  </fieldset>
+                  <fieldset><legend>Card Details</legend>
+                    <div class="field">
+                      <label for="card_number">Credit Card Number</label>
+                      <input id="card_number" type="text" />
+                    </div>
+                    <div class="field">
+                      <label for="card_code">Card Security Code (CVV)</label>
+                      <input id="card_code" type="text" />
+                    </div>
+                    <div class="field">
+                      <label for="card_month">Card Expiration</label>
+                      <select id="card_month">
+                        <option value="1">1 - January</option>
+                        <option value="2">2 - February</option>
+                        <option value="3">3 - March</option>
+                        <option value="4">4 - April</option>
+                        <option value="5">5 - May</option>
+                        <option value="6">6 - June</option>
+                        <option value="7">7 - July</option>
+                        <option value="8">8 - August</option>
+                        <option value="9">9 - September</option>
+                        <option value="10">10 - October</option>
+                        <option value="11">11 - November</option>
+                        <option value="12">12 - December</option>
+                      </select>
+                      <select id="card_year">
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <div class="control-group string optional user_coupon"><label class="string optional control-label" for="user_coupon">Promotional Coupon (if any)</label><div class="controls"><input class="string optional" id="user_coupon" name="user[coupon]" size="50" type="text" /></div></div>
+                    </div>
+                  </fieldset>
+                  <input id="user_stripe_token" name="user[stripe_token]" type="hidden" />
+                  <div class="control-group boolean optional user_accepts"><label class="boolean optional control-label" for="user_accepts">I agree to the Terms and Conditions</label><div class="controls"><input name="user[accepts]" type="hidden" value="0" /><label class="checkbox"><input class="boolean optional" id="user_accepts" name="user[accepts]" type="checkbox" value="1" /></label></div></div>
+                  <input class="btn btn-primary" name="commit" type="submit" value="Sign up" />
+                  <!-- </div> -->
+                </form>
+              </div>
+            </div>
+            <footer>
+              <div class="footer">
+                <div class="container-fluid">
+                  <div class="pull-left">
+                    © Accufly 2014|
+                    <a href="/#about" class="white" data-toggle="elementscroll">About</a>
+                    |
+                    <a href="/termsandconditions" class="white">Terms &amp; Conditions</a>
+                  </div>
+                  <div class="pull-right">
+                    Catch more.
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </div>
+        <!--! end of .container -->
+      </div>
+      <!--! end of #main -->
+    </body>
+  </html>

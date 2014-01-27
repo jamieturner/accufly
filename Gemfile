@@ -17,6 +17,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 #gem 'ruby-debug'
+gem "htmlbeautifier", "~> 0.0.9"
 gem 'cocoon'
 gem 'jquery-rails'
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]

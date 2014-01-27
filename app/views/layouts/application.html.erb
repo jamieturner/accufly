@@ -20,46 +20,31 @@
     <div id="main" role="main">
       <div>
         <div class="content">
-           <div class="row">
+          <div class="row">
             <div class="span12">
               <%= render 'layouts/messages' %>
               <%= yield %>
             </div>
           </div>
           <footer>
-    <div class="footer">
-    <div class="container-fluid">
-        
-            <div class="pull-left">
-                © Accufly 2014|
-    
-            <%= link_to 'About', root_path(anchor: "about"), "data-toggle" => "elementscroll", :class => 'white' %> |
-            <%= link_to 'Terms & Conditions', termsandconditions_path, :class => 'white' %>        
+            <div class="footer">
+              <div class="container-fluid">
+                <div class="pull-left">
+                  © Accufly 2014|
+                  <%= link_to 'About', root_path(anchor: "about"), "data-toggle" => "elementscroll", :class => 'white' %>
+                  |
+                  <%= link_to 'Terms & Conditions', termsandconditions_path, :class => 'white' %>
                 </div>
-       
-            <div class="pull-right">
-Catch more.
-
-          
-
-    <!--
-
-     /container 
-
-    -->
-
-</div>
-<!--
-
- /#footer 
-
--->
+                <div class="pull-right">
+                  Catch more.
+                </div>
+              </div>
+            </div>
           </footer>
         </div>
-        
-      </div> <!--! end of .container -->
-
-    </div> <!--! end of #main -->
-
+      </div>
+      <!--! end of .container -->
+    </div>
+    <!--! end of #main -->
   </body>
 </html>

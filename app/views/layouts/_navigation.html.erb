@@ -1,45 +1,40 @@
-
-
 <%= link_to "Accufly", root_path, :class => 'brand' %>
 <ul class="nav pull-right">
   <li>
-    <%= link_to "Buy", root_path(anchor: "buy"), "data-toggle" => "elementscroll" %>      
-    </li>
-      <li>
-    <%= link_to "What you get", root_path(anchor: "whatyouget"), "data-toggle" => "elementscroll" %>      
-    </li>
-          <li>
-    <%= link_to "How it works", root_path(anchor: "howitworks"), "data-toggle" => "elementscroll" %>      
-    </li>
-              <li>
-    <%= link_to "Customer Quotes", root_path(anchor: "socialproof"), "data-toggle" => "elementscroll" %>      
-    </li>
+    <%= link_to "Buy", root_path(anchor: "buy"), "data-toggle" => "elementscroll" %>
+  </li>
   <li>
-    <%= link_to 'About', root_path(anchor: "about"), "data-toggle" => "elementscroll" %>        
-    </li>
-    <li>
-    <%= link_to 'FAQs', root_path(anchor: "faqs"), "data-toggle" => "elementscroll" %>        
-    </li>
-
+    <%= link_to "What you get", root_path(anchor: "whatyouget"), "data-toggle" => "elementscroll" %>
+  </li>
+  <li>
+    <%= link_to "How it works", root_path(anchor: "howitworks"), "data-toggle" => "elementscroll" %>
+  </li>
+  <li>
+    <%= link_to "Customer Quotes", root_path(anchor: "socialproof"), "data-toggle" => "elementscroll" %>
+  </li>
+  <li>
+    <%= link_to 'About', root_path(anchor: "about"), "data-toggle" => "elementscroll" %>
+  </li>
+  <li>
+    <%= link_to 'FAQs', root_path(anchor: "faqs"), "data-toggle" => "elementscroll" %>
+  </li>
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
+      <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
     </li>
   <% else %>
     <li >
-    <%= link_to 'Login', new_user_session_path %>  
+      <%= link_to 'Login', new_user_session_path %>
     </li>
-  
   <% end %>
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
+      <%= link_to 'Edit account', edit_user_registration_path %>
     </li>
     <% if current_user.has_role? :admin %>
       <li>
-      <%= link_to 'Admin', users_path %>
+        <%= link_to 'Admin', users_path %>
       </li>
     <% end %>
   <% end %>
 </ul>
-
