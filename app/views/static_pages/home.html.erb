@@ -1,31 +1,28 @@
 <% if user_signed_in? %>
 
-<div class="container-fluid">
-  <div class="hero-unit">
-    test
-  </div>
-</div>
+<%= render 'static_pages/home' %>
 
 <% else %>
 
-       <script type="text/javascript">
-       $('#myTab a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-
+<!-- Tabbed content -->
+<script type="text/javascript">
+   $('#myTab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
     })
-       </script> 
+</script> 
 
 <script type="text/javascript">
-$(function () {
-$('#myTab a:first').tab('show');
-})
+  $(function () {
+    $('#myTab a:first').tab('show');
+  })
 </script>
 
 
+<!-- Parallax -->
 
 
-    <script type="text/javascript">
+<script type="text/javascript">
 $(document).ready(function(){
    // cache the window object
    $window = $(window);
@@ -49,14 +46,34 @@ $(document).ready(function(){
 }); // close out script
 </script> 
 
+<!-- Smooth Scrolling -->
+
+<script type="text/javascript">
+
+$(function() {
+  $('[data-toggle="elementscroll"]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top -40
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+</script>
 
 <!-- Section 1 -->
 <section id="intro" data-speed="6" data-type="background">
     <div class="container-fluid">
         <div class='span9'>
     <div class="hero-unit">
-    <h1> <img src="/assets/logo.png">
-    Flies made simple</h1>
+    <!--  <h1> <img src="/assets/logo.png"> -->
+    <h1>Flies made simple</h1>
     Discover. Learn. Catch
     
     </div>
@@ -64,7 +81,7 @@ $(document).ready(function(){
     </div>
 </section>
 <!-- Section 2 -->
-<section id="home" data-speed="4" data-type="background">
+<section id="buy" data-speed="4" data-type="background">
     <div class="container-fluid">
     <ul class="nav nav-tabs" id="myTab">
       <li><a href="#nothome" data-toggle="tab">Trout</a></li>
@@ -143,7 +160,7 @@ $(document).ready(function(){
   <div class="span3 well featured">
     <div class="plan featured-plan"><h2>Gold</h2></div>
     <ul class="unstyled">
-      <li>12 Salmonflies every month</li>
+      <li>12 Salmon flies every month</li>
     </ul>
     <h3>£9.99/month</h3>
     <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
@@ -161,7 +178,7 @@ $(document).ready(function(){
 </div>
 </section>
 <!-- Section 3 -->
-<section id="about" data-speed="2" data-type="background">
+<section id="whatyouget" data-speed="2" data-type="background">
     <div class="container">
     <div class="row">
     What you get <br>
@@ -203,8 +220,7 @@ $(document).ready(function(){
 </section>
 
 <!-- Section 5 -->
-<!-- Section 3 -->
-<section id="about" data-speed="2" data-type="background">
+<section id="socialproof" data-speed="2" data-type="background">
     <div class="container">
       <div class="row">       
       <div class="span1">
@@ -225,6 +241,48 @@ $(document).ready(function(){
      <div class="span3">
        <blockquote><p>"I'm looking forward to this year's reunion and catching up with everyone."</p><p><small>Michael Tyson</small></p></blockquote>
       </div>
+</section>
+
+<!-- Section 6 -->
+<section id="about" data-speed="2" data-type="background">
+    <div class="container">
+    <div class="row">
+    About Us <br>
+    <div class="span4">
+        <h1>About 1</h1>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+</div>
+        <div class="span4">
+            <h1>About 2</h1>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+</div>
+        <div class="span4">
+            <h1>About 3</h1>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+    </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 7 -->
+<section id="faqs" data-speed="2" data-type="background">
+    <div class="container">
+    <div class="row">
+    FAQs <br>
+    <div class="span4">
+        <h1>FAQ 1</h1>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+</div>
+        <div class="span4">
+            <h1>FAQ 2</h1>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+</div>
+        <div class="span4">
+            <h1>FAQ 3</h1>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+    </div>
+        </div>
+    </div>
 </section>
 
 <% end %>

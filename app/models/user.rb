@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
   #has_many :addresses
   has_many :addresses, :class_name => 'Address', :foreign_key => :user_id
   accepts_nested_attributes_for :addresses, :reject_if => :all_blank, :allow_destroy => true
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :addresses_attributes
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :accepts, :addresses_attributes
   attr_accessor :stripe_token, :coupon
   before_save :update_stripe
   before_destroy :cancel_subscription
-
+  validates :accepts, :acceptance => true, :on => :create
 
 
   def update_plan(role)
