@@ -78,39 +78,40 @@
   </section>
   <!-- Section 2 -->
   <section id="buy" data-speed="4" data-type="background">
-    <div class="container">
+    <!-- <div class="container">
       <ul class="nav nav-tabs" id="myTab">
         <li><a href="#nothome" data-toggle="tab">Trout</a></li>
         <li><a href="#profile" data-toggle="tab">Sea Trout</a></li>
         <li><a href="#messages" data-toggle="tab">Salmon</a></li>
       </ul>
     </div>
+  -->
     <!-- Tab panes -->
     <div class="tab-content">
       <div class="tab-pane active" id="nothome">
         <div class="row span12 plans">
           <div class="span3 offset1 well dip">
-            <div class="plan"><h2>Silver Trout</h2></div>
+            <div class="plan"><h2>Silver Plan</h2></div>
             <ul class="unstyled">
-              <li>5 Trout flies every month</li>
+              <li>10 Trout flies every 3 months</li>
             </ul>
-            <h3>£4.99/month</h3>
+            <h3>£4.99/quarter</h3>
             <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %>
           </div>
           <div class="span3 well featured">
-            <div class="plan featured-plan"><h2>Gold Trout</h2></div>
+            <div class="plan featured-plan"><h2>Gold Plan</h2></div>
             <ul class="unstyled">
-              <li>12 Trout flies every month</li>
+              <li>22 Trout flies every 3 months</li>
             </ul>
-            <h3>£9.99/month</h3>
+            <h3>£9.99/quarter</h3>
             <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %>
           </div>
           <div class="span3 well dip">
-            <div class="plan"><h2>Platinum Trout</h2></div>
+            <div class="plan"><h2>Platinum Plan</h2></div>
             <ul class="unstyled">
-              <li>20 Trout flies every month</li>
+              <li>33 Trout flies every 3 months</li>
             </ul>
-            <h3>£14.99/month</h3>
+            <h3>£14.99/quarter</h3>
             <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %>
           </div>
         </div>
@@ -180,16 +181,16 @@
         What you get
         <br>
         <div class="span4">
-          <h1>Thing 1</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          <h2>Peronalised flies each quarter</h2>
+          You tell us what you fish for, where you fish and the type of flies you do and do not like. We choose flies personally based on your preferences.
         </div>
         <div class="span4">
-          <h1>Thing 2</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          <h2>Edu-Pack</h2><br><br>
+          With each pack we send you a full guide to the flies, along with best conditions to use them in, where they will be most effective and tips to get the most out of the pattern.
         </div>
         <div class="span4">
-          <h1>Thing 3</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          <h2>Excellent Customer Service</h2>
+          We pride ourselves on answering calls and emails quickly. If you have any problems just give us a call on 0209453449 and we'll get them resolved. We also love talking about fishing, so if you'd like to talke about the flies we've sent you or any other aspects of fly fishing just give us a shout!
         </div>
       </div>
     </div>
@@ -201,21 +202,43 @@
         How it works
         <br>
         <div class="span4">
-          <h1>Step 1</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          <h2>1. Select your preferences</h2>
+          We ask you a couple of simple questions such as whether you mostly fish on still water or rivers and do you prefer wet or dry flies.
         </div>
         <div class="span4">
-          <h1>Step 2</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          <h2>2. We send you your flies</h2>
+          Our experts use your preferences to hand select your flies and get them sent to you in smart (eco) packaging. We also include a edu-pack giving you all the information you need to get the most out of your flies.
         </div>
         <div class="span4">
-          <h1>Step 3</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          <h2>3. Catch More!</h2>
+          That's the plan.
         </div>
       </div>
     </div>
   </section>
   <!-- Section 5 -->
+  <section id="about" data-speed="2" data-type="background">
+    <div class="container">
+      <div class="row">
+        <br>
+        <div class="span12">
+          <h2>Who are we?</h2>
+          Based in North England we've been fishing the rivers for longer than we can remember.
+          <br><br>We've been part of the local fishing community for a number of years now and have taken the decision to take our expertise to the international level with the launch of the Accufly service.<br><br><br>
+        </div>
+        <!--<div class="span4">
+          <h2>About 2</h2>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+        <div class="span4">
+          <h2>About 3</h2>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </div>
+      -->
+      </div>
+    </div>
+  </section>
+  <!-- Section 6 -->
   <section id="socialproof" data-speed="2" data-type="background">
     <div class="container">
       <div class="row">
@@ -240,46 +263,26 @@
       </div>
     </div>
   </section>
-  <!-- Section 6 -->
-  <section id="about" data-speed="2" data-type="background">
-    <div class="container">
-      <div class="row">
-        About Us
-        <br>
-        <div class="span4">
-          <h1>About 1</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </div>
-        <div class="span4">
-          <h1>About 2</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </div>
-        <div class="span4">
-          <h1>About 3</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- Section 7 -->
-  <section id="faqs" data-speed="2" data-type="background">
-    <div class="container">
-      <div class="row">
-        FAQs
-        <br>
-        <div class="span4">
-          <h1>FAQ 1</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </div>
-        <div class="span4">
-          <h1>FAQ 2</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </div>
-        <div class="span4">
-          <h1>FAQ 3</h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- <section id="faqs" data-speed="2" data-type="background">
+          <div class="container">
+            <div class="row">
+              FAQs
+              <br>
+              <div class="span4">
+                <h2>FAQ 1</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+              </div>
+              <div class="span4">
+                <h2>FAQ 2</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+              </div>
+              <div class="span4">
+                <h2>FAQ 3</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis arcu nec ullamcorper porta. Fusce in venenatis nisi. Etiam luctus odio ac elementum sodales. Suspendisse nec purus quam. Cras interdum pretium mauris. Aenean accumsan scelerisque nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+              </div>
+            </div>
+          </div>
+        </section>
+      -->
 <% end %>

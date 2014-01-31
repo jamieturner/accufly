@@ -10,14 +10,16 @@
     <%= link_to "How it works", root_path(anchor: "howitworks"), "data-toggle" => "elementscroll" %>
   </li>
   <li>
-    <%= link_to "Customer Quotes", root_path(anchor: "socialproof"), "data-toggle" => "elementscroll" %>
+    <%= link_to "Customer quotes", root_path(anchor: "socialproof"), "data-toggle" => "elementscroll" %>
   </li>
   <li>
-    <%= link_to 'About', root_path(anchor: "about"), "data-toggle" => "elementscroll" %>
+    <%= link_to 'About us', root_path(anchor: "about"), "data-toggle" => "elementscroll" %>
   </li>
+  <!--
   <li>
     <%= link_to 'FAQs', root_path(anchor: "faqs"), "data-toggle" => "elementscroll" %>
   </li>
+-->
   <% if user_signed_in? %>
     <li>
       <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
