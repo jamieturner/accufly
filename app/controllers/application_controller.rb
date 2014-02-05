@@ -14,11 +14,14 @@ protect_from_forgery
       when 'admin'
         users_path
       when 'silver'
-        content_silver_path
+        #content_silver_path
+        root_path
       when 'gold'
-        content_gold_path
+        #content_gold_path
+        root_path
       when 'platinum'
-        content_platinum_path
+        #content_platinum_path
+        root_path
       else
         root_path
     end
