@@ -7,3 +7,15 @@ StripeEvent.setup do
     user.expire
   end
 end
+
+
+
+StripeEvent.setup do
+  subscribe 'invoice.payment_succeeded' do |event|
+    user = User.find_by_customer_id(event.data.object.customer)
+    UserMailer.welcome_email(user).deliver
+
+  end
+end
+
+
