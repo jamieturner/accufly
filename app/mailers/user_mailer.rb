@@ -4,4 +4,8 @@ class UserMailer < ActionMailer::Base
   def expire_email(user)
     mail(:to => user.email, :subject => "Subscription Cancelled")
   end
+
+    def welcome_email(user)
+    mail(:to => user.email, :subject => "Welcome!")
+  end
 end

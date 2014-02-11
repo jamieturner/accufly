@@ -78,6 +78,7 @@ class User < ActiveRecord::Base
       customer = Stripe::Customer.retrieve(customer_id)
       unless customer.nil? or customer.respond_to?('deleted')
         if customer.subscription.status == 'active'
+          UserMailer.expire_email(self).deliver
           customer.cancel_subscription
         end
       end
