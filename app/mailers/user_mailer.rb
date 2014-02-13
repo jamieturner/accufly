@@ -8,4 +8,11 @@ class UserMailer < ActionMailer::Base
     def welcome_email(user)
     mail(:to => user.email, :subject => "Welcome!")
   end
+
+      def invoice_payment_succeeded_email(user)
+    mail(:to => user.email, :subject => "Receipt!")
+  end
+
 end
+
+

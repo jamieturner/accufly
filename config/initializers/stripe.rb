@@ -18,4 +18,11 @@ StripeEvent.setup do
   end
 end
 
+StripeEvent.setup do
+  subscribe 'invoice.payment_succeeded' do |event|
+    user = User.find_by_customer_id(event.data.object.customer)
+    UserMailer.invoice_payment_succeeded_email(user).deliver
+
+  end
+end
 
