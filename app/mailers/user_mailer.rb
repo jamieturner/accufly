@@ -13,6 +13,16 @@ class UserMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "Receipt!")
   end
 
+        def card_updated_email(user)
+    mail(:to => user.email, :subject => "Card Updated!")
+  end
+
+
+        def subscription_updated_email(user)
+    mail(:to => user.email, :subject => "Subscription Updated!")
+  end
+
+
 end
 
 
