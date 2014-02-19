@@ -18,13 +18,13 @@ StripeEvent.setup do
   end
 end
 
-StripeEvent.setup do
-  subscribe 'customer.card.created' do |event|
-    user = User.find_by_customer_id(event.data.object.customer)
-    UserMailer.card_updated_email(user).deliver
-
-  end
-end
+#StripeEvent.setup do
+#  subscribe 'customer.card.created' do |event|
+#    user = User.find_by_customer_id(event.data.object.customer)
+#    UserMailer.card_updated_email(user).deliver
+#
+#  end
+#end
 
 StripeEvent.setup do
   subscribe 'customer.subscription.updated' do |event|

@@ -47,6 +47,37 @@ class RegistrationsController < Devise::RegistrationsController
 
   end
 
+  def update
+    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
+    prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
+
+    if update_resource(resource, account_update_params)
+      yield resource if block_given?
+      if is_flashing_format?
+        flash_key = update_needs_confirmation?(resource, prev_unconfirmed_email) ?
+          :update_needs_confirmation : :updated
+        set_flash_message :notice, flash_key
+      end
+      sign_in resource_name, resource, :bypass => true
+      respond_with resource, :location => after_update_path_for(resource)
+    else
+      clean_up_passwords resource
+
+
+      if URI(request.referer).path == '/users/edit'
+        respond_with resource
+      else
+        if URI(request.referer).path == '/users'
+          respond_with resource
+        else
+          redirect_to after_update_path_for(resource), :flash => { :alert => "Please enter your password" }
+        end
+      end
+
+    end
+  end
+
+
 
 
   def update_plan
@@ -69,6 +100,13 @@ class RegistrationsController < Devise::RegistrationsController
       flash.alert = 'Unable to update card.'
       render :edit
     end
+  end
+
+  protected
+  # By default we want to require a password checks on update.
+  # You can overwrite this method in your own RegistrationsController.
+  def update_resource(resource, params)
+    resource.update_with_password(params)
   end
 
   private

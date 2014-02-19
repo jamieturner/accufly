@@ -6,6 +6,7 @@
     <%= simple_form_for(current_user, :url => registration_path(current_user), :html => { :method => :put, :class => 'form-vertical ' }) do |f| %>
     <%= f.error_notification %>
       <%= display_base_errors current_user %>
+      <%= f.error_notification %>
       <%= f.input :dry_fly, inline_label: 'I use dry flies', as: :boolean, label: false %>
       <%= f.input :wet_fly, inline_label: 'I use wet flies', as: :boolean, label: false %>
       <%= f.input :lure, inline_label: 'I use lures', as: :boolean, label: false %>
