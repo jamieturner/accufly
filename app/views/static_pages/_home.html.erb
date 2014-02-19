@@ -1,14 +1,18 @@
 <div class="intro2">
   <div class="middlebit">
     <h1>You are the one who catches more!</h1><br>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in pulvinar elit. Nunc non eros nec elit iaculis pretium. Nulla vel quam id nulla malesuada dictum. Nam velit nisi, varius sit amet egestas ornare, sagittis nec est. Pellentesque euismod lacus ut imperdiet mollis. Ut vel nisi quis ipsum sollicitudin congue.
-    <br>
-    <br>
-    Vivamus rhoncus lacinia metus, in luctus eros malesuada vel. Sed ornare commodo mauris, a mollis enim pulvinar in. Praesent elementum luctus nisi quis adipiscing. Duis elementum ac lacus vitae volutpat. Pellentesque mattis euismod tortor, a venenatis enim cursus vel. Morbi rutrum vitae lorem non lacinia. Curabitur at porta urna, ac congue sem.
-    <br>
-    <br>
-    Pellentesque in dignissim mauris. Suspendisse risus sapien, iaculis ut nibh non, cursus viverra nisi. In adipiscing metus id mauris congue, eu scelerisque neque blandit. Phasellus lacus erat, volutpat ac sagittis id, aliquam in libero.
-    <br>
-    <br>
+    Below are your current fishing preferences. You can update these here:
+    <br><br>
+    <%= simple_form_for(current_user, :url => registration_path(current_user), :html => { :method => :put, :class => 'form-vertical ' }) do |f| %>
+    <%= f.error_notification %>
+      <%= display_base_errors current_user %>
+      <%= f.input :dry_fly, inline_label: 'I use dry flies', as: :boolean, label: false %>
+      <%= f.input :wet_fly, inline_label: 'I use wet flies', as: :boolean, label: false %>
+      <%= f.input :lure, inline_label: 'I use lures', as: :boolean, label: false %>
+      <%= f.input :still_water, inline_label: 'I fish lakes', as: :boolean, label: false %>
+      <%= f.input :river, inline_label: 'I fish rivers', as: :boolean, label: false %>
+      <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+      <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+    <% end %>
   </div>
 </div>

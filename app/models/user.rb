@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+
+
+  #User preferences
+
+  include RailsSettings::Extend
+
   rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -10,12 +16,29 @@ class User < ActiveRecord::Base
   #has_many :addresses
   has_many :addresses, :class_name => 'Address', :foreign_key => :user_id
   accepts_nested_attributes_for :addresses, :reject_if => :all_blank, :allow_destroy => true
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :accepts, :addresses_attributes
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :accepts, :addresses_attributes, :dry_fly, :wet_fly, :lure, :still_water, :river
   attr_accessor :stripe_token, :coupon
   before_save :update_stripe
   before_destroy :cancel_subscription
   validates :accepts, :acceptance => true, :on => :create
 
+#add setting
+  
+
+  def self.settings_attr_accessor(*args)
+    args.each do |method_name|
+      eval "
+        def #{method_name}
+          self.settings.send(:#{method_name})
+        end
+        def #{method_name}=(value)
+          self.settings.send(:#{method_name}=, value)
+        end
+      "
+    end
+  end
+
+  settings_attr_accessor :dry_fly, :wet_fly, :lure, :still_water, :river
 
   def update_plan(role)
     self.role_ids = []

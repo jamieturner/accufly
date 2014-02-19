@@ -12,6 +12,14 @@
       <%= f.input :email, :required => true %>
       <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
       <%= f.input :password_confirmation, :required => false %>
+      <br>
+      <%= field_set_tag 'Your fishing preferences' do %>
+      <%= f.input :dry_fly, inline_label: 'I use dry flies', as: :boolean, label: false %>
+      <%= f.input :wet_fly, inline_label: 'I use wet flies', as: :boolean, label: false %>
+      <%= f.input :lure, inline_label: 'I use lures', as: :boolean, label: false %>
+      <%= f.input :still_water, inline_label: 'I fish lakes', as: :boolean, label: false %>
+      <%= f.input :river, inline_label: 'I fish rivers', as: :boolean, label: false %>
+      <% end %>
       <%= field_set_tag 'Address Details' do %>
         <%= f.fields_for :addresses  do |builder| %>
           <%= builder.label :first_line %>
